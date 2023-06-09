@@ -23,6 +23,7 @@ public class AddressBookMain {
             System.out.println("9.sort ");
             System.out.println("10.write to file");
             System.out.println("11.Read from file");
+            System.out.println("12.Read from SCVfile");
 
 
 
@@ -64,6 +65,10 @@ public class AddressBookMain {
                 case 11:
                     addressBook.readFromFile();
                     break;
+
+                case 12:
+                    addressBook.writetocsv();
+                    addressBook.readfromcsv();
                 default:
                     System.out.println("Enter Option Between 1 To 7");
 

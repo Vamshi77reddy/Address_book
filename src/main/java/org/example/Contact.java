@@ -1,5 +1,7 @@
 package org.example;
 
+import org.json.JSONObject;
+
 public class Contact {
         private String FirstName;
         private String LastName;
@@ -23,7 +25,9 @@ public class Contact {
             PhoneNumber = phoneNumber;
             Email = email;
         }
-
+    String[] getContactStrings() {
+        return new String[] {getFirstName(), getLastName(), getCity(), getAddress(), getState(), getZip(), getPhoneNumber() + "", getEmail() + ""};
+    }
         public String getFirstName() {
             return FirstName;
         }
@@ -88,7 +92,22 @@ public class Contact {
             Email = email;
         }
 
-        @Override
+    public JSONObject getContactJSON() {
+        JSONObject jsonPerson = new JSONObject();
+        jsonPerson.put("firstName", getFirstName());
+        jsonPerson.put("lastName", getLastName());
+        jsonPerson.put("city", getCity());
+        jsonPerson.put("address", getAddress());
+        jsonPerson.put("state", getState());
+        jsonPerson.put("zip", getZip());
+        jsonPerson.put("phonenumber", getPhoneNumber());
+        jsonPerson.put("email", getEmail());
+        JSONObject jsonPersonObject = new JSONObject();
+        jsonPersonObject.put("person", jsonPerson);
+        return jsonPersonObject;
+    }
+
+    @Override
         public String toString() {
             return "Contact{" +
                     "FirstName='" + FirstName + '\'' +
