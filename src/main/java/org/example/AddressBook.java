@@ -239,7 +239,6 @@ public class AddressBook {
             String personDataString = contact.toString().concat("\n");
             addressBookBuffer.append(personDataString);
         });
-
         try {
             Files.write(Paths.get(path), addressBookBuffer.toString().getBytes());
         }

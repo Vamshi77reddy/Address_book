@@ -21,7 +21,7 @@ public class AddressBookMain {
             System.out.println("7.serach by city ");
             System.out.println("8.search by state ");
             System.out.println("9.sort ");
-            System.out.println("10.Read from file");
+            System.out.println("10.write to file");
             System.out.println("11.Read from file");
 
 
