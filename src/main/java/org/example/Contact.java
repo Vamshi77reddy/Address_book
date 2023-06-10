@@ -2,6 +2,8 @@ package org.example;
 
 import org.json.JSONObject;
 
+import java.util.Objects;
+
 public class Contact {
         private String FirstName;
         private String LastName;
@@ -106,7 +108,9 @@ public class Contact {
         jsonPersonObject.put("person", jsonPerson);
         return jsonPersonObject;
     }
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFirstName());}
     @Override
         public String toString() {
             return "Contact{" +

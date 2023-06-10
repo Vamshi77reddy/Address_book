@@ -323,24 +323,24 @@ public class AddressBook {
         hashMap.keySet().stream().forEach(bookname -> hashMap.get(bookname).getContactList()
                 .stream().forEach(prsn -> jsonPersons.put((prsn.getContactJSON()))));
 
-        Path jsonPath = Paths.get("C:\\Users\\prajw\\IdeaProjects\\AddressBookMeven\\src\\main\\java\\com\\bridgelabz\\addressbook.json");
+        Path jsonPath = Paths.get("C:\\Users\\Teju Reddy\\IdeaProjects\\Day-13\\src\\main\\java\\org\\example\\Address_book.json");
         try {
             Files.deleteIfExists(jsonPath);
             Files.writeString(jsonPath, jsonPersons.toString(), StandardOpenOption.CREATE);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-//        JSONParser jsonParser = new JSONParser();
-//        System.out.println("\nReading data from JSON file:");
-//        try {
-//            Object object = jsonParser.parse(Files.newBufferedReader(jsonPath));
-//            JSONArray personsList = (JSONArray) object;
-//            System.out.println(personsList);
-//        } catch (IOException | ParseException e) {
-//            e.printStackTrace();
-//        }
- }
+        JSONParser jsonParser = new JSONParser();
+        System.out.println("\nReading data from JSON file:");
+        try {
+            Object object = jsonParser.parse(Files.newBufferedReader(jsonPath));
+            JSONArray personsList = (JSONArray) object;
+            System.out.println(personsList);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
         public String toString() {
             return "AddressBook{" +
